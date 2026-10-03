@@ -14,7 +14,7 @@ const userRouter=require("./routes/user.js")
 const conversationRouter=require("./routes/conversation.js");
 const messageRouter=require("./routes/message.js");
 
-const router=require("./routes/health.js");
+
 const connectDB=require("./config/database.js");
 const {connectRedis, redisClient, pubClient, subClient}=require("./config/redis.js");
 
@@ -220,7 +220,7 @@ io.on("connection", async(socket)=>{
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(router);
+
 app.use("/users", userRouter);
 app.use("/conversations", conversationRouter);
 app.use("/messages", messageRouter);
